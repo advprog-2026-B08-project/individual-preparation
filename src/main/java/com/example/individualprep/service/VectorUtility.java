@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class VectorUtility {
     
     public double[] add(double[] v1, double[] v2) {
-        // TODO: Implement me properly!
+        // TODO: Test
         return new double[] { 0.0, 0.0, 0.0 };
     }
 
