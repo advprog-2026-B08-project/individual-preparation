@@ -1,6 +1,6 @@
 package com.example.individualprep.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -38,5 +38,19 @@ public class ArithmeticUtilityTest {
     void testNegativeExponent() {
         ArithmeticUtility ArithmeticUtil = new ArithmeticUtility();
         assertEquals(0.25, ArithmeticUtil.exponent(2, -2), delta);
+    }
+
+    @Test
+    void testDivide() {
+        ArithmeticUtility ArithmeticUtil = new ArithmeticUtility();
+        assertEquals(2.5, ArithmeticUtil.divide(5, 2), delta);
+    }
+
+    @Test
+    void testDivideByZero() {
+        ArithmeticUtility ArithmeticUtil = new ArithmeticUtility();
+        assertThrows(IllegalArgumentException.class, () -> 
+            ArithmeticUtil.divide(5, 0)
+        );
     }
 }
