@@ -7,7 +7,6 @@ on:
     - 'chore/**'
     - 'fix/**'
     - 'refactor/**'
-    - 'test/**'
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
