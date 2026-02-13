@@ -27,7 +27,7 @@ public class ArithmeticUtility {
     }
 
     public double exponent(double o1, int n) {
-        // TODO: Test
-        return 0.0;
+        double result = Math.pow(o1, n);
+        return result;
     }
 }
