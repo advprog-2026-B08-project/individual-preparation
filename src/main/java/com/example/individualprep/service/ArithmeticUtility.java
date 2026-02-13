@@ -26,7 +26,7 @@ public class ArithmeticUtility {
     }
 
     public double exponent(double o1, int n) {
-        // TODO: Implement me properly!
+        // TODO: Test
         return 0.0;
     }
 }
