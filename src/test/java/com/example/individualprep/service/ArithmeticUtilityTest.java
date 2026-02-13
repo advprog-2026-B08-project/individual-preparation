@@ -39,4 +39,18 @@ public class ArithmeticUtilityTest {
         ArithmeticUtility ArithmeticUtil = new ArithmeticUtility();
         assertEquals(0.25, ArithmeticUtil.exponent(2, -2), delta);
     }
+
+    @Test
+    void testDivide() {
+        ArithmeticUtility ArithmeticUtil = new ArithmeticUtility();
+        assertEquals(2.5, ArithmeticUtil.divide(5, 2), delta);
+    }
+
+    @Test
+    void testDivideByZero() {
+        ArithmeticUtility ArithmeticUtil = new ArithmeticUtility();
+        assertThrows(IllegalArgumentException.class, () -> 
+            ArithmeticUtil.divide(5, 0)
+        );
+    }
 }
