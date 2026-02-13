@@ -86,4 +86,44 @@ public class VectorUtilityTest {
                 vectorUtility.subtract(v1, v2)
         );
     }
+
+    @Test
+    void testMultiplyIfValid() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        // Data testing sesuai logic Person C (Vector * Scalar)
+        double[] v1 = {1.0, 2.0, 3.0};
+        int scalar = 5;
+
+        double[] expected = new double[]{5.0, 10.0, 15.0};
+        double[] result = vectorUtility.multiply(v1, scalar);
+
+        assertArrayEquals(expected, result, "Hasil perkalian vektor harus sesuai");
+    }
+
+    @Test
+    void testMultiplyIfNull() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = null;
+        int scalar = 5;
+
+        // Memastikan ada proteksi jika input null
+        assertThrows(IllegalArgumentException.class, () ->
+                vectorUtility.multiply(v1, scalar)
+        );
+    }
+
+    @Test
+    void testMultiplyWithZero() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {1.0, 2.0, 3.0};
+        int scalar = 0;
+
+        double[] expected = new double[]{0.0, 0.0, 0.0};
+        double[] result = vectorUtility.multiply(v1, scalar);
+
+        assertArrayEquals(expected, result, "Perkalian dengan nol harus menghasilkan vektor nol");
+    }
 }
