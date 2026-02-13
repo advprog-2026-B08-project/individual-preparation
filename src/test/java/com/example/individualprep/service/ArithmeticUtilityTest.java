@@ -53,4 +53,24 @@ public class ArithmeticUtilityTest {
             ArithmeticUtil.divide(5, 0)
         );
     }
+
+    @Test
+    void testMultiply() {
+        ArithmeticUtility arithmeticUtil = new ArithmeticUtility();
+        assertEquals(25.0, arithmeticUtil.multiply(10.0, 2.5), delta);
+    }
+
+    @Test
+    void testMultiplyWithNegative() {
+        ArithmeticUtility arithmeticUtil = new ArithmeticUtility();
+        assertEquals(-15.0, arithmeticUtil.multiply(5.0, -3.0), delta);
+        assertEquals(20.0, arithmeticUtil.multiply(-4.0, -5.0), delta);
+    }
+
+    @Test
+    void testMultiplyWithZero() {
+        ArithmeticUtility arithmeticUtil = new ArithmeticUtility();
+        assertEquals(0.0, arithmeticUtil.multiply(0.0, 10.0), delta);
+        assertEquals(0.0, arithmeticUtil.multiply(5.5, 0.0), delta);
+    }
 }
