@@ -50,4 +50,40 @@ public class VectorUtilityTest {
         );
     }
 
+    @Test
+    void testSubtractIfValid(){
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {5, 6, 7};
+        double[] v2 = {6, 7, 8};
+
+        double[] expected = new double[]{-1, -1, -1};
+        double[] result = vectorUtility.subtract(v1, v2);
+
+        assertArrayEquals(expected, result);
+    }
+
+    @Test
+    void testSubtractIfNull(){
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = null;
+        double[] v2 = {6, 7, 8};
+
+        assertThrows(IllegalArgumentException.class, () ->
+                vectorUtility.subtract(v1, v2)
+        );
+    }
+
+    @Test
+    void testSubtractIfDifferentSize(){
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {5, 6, 7, 8};
+        double[] v2 = {6, 7, 8};
+
+        assertThrows(IllegalArgumentException.class, () ->
+                vectorUtility.subtract(v1, v2)
+        );
+    }
 }
