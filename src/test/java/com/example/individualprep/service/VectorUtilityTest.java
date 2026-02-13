@@ -30,7 +30,7 @@ public class VectorUtilityTest {
     void testAddIfNull(){
         VectorUtility vectorUtility = new VectorUtility();
 
-        double[] v1 = {};
+        double[] v1 = null;
         double[] v2 = {6, 7, 8};
 
         assertThrows(IllegalArgumentException.class, () ->
